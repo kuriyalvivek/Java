@@ -1,0 +1,40 @@
+dev propelplm new arch api: https://gghw7z98n4.execute-api.ap-south-1.amazonaws.com/Stage/propelplm_v1-doc
+
+
+dev google workspace drive new arch api: https://fap0bxa93l.execute-api.ap-south-1.amazonaws.com/Stage/googlewsdrive_v1-doc
+
+
+"generatePropelPLMReport_v1":"138/propelplm_v1-doc",
+            "generateEvisortReport_v1": "139/googlewsdrive_v1-doc",
+            
+            
+ datadog migration
+ 
+ elasticsearch bug fixes
+ 
+ google workspace,drive,user
+ 
+ { \"index\": \"compliance-akitra-test\",\"query\": {\"match_all\": {}}}
+ 
+ 
+ 
+Evidence Tag used in different scenario 
+
+1>Api name:- /evidence/v4/getEvidenceConfig/
+	--while sending evidence config to lambda.
+2>Api name:-/addNewEvidence
+	--While new arch evidence creation using curl command.
+3>While adding new evidence in old arch using plsql migration.
+4>Api name:- /evidence/v3/updateCustEvidenceConfig/  
+	--while create a dynamic evidence using above api.
+5>Query based evidence.
+6>Custom static based evidence .
+7>Risk based evidence
+8>Document based evidence (3rd type) using (/updateDocList API)
+
+
+19_feb
+
+migration/evidenceTagFormateFix
+
+item.tag = JSON.parse(item.tag.replace(/'/g, '"'));
