@@ -7,11 +7,14 @@ public class Main {
 
         System.out.println(":::"+Thread.currentThread().getName());
 
-        numberPrecess nubp = new numberPrecess(5);
+        for(int i =0 ; i <100 ;i++){
+            numberPrecess nubp = new numberPrecess(i);
 
-        Thread newTH = new Thread(nubp);
+            Thread newTH = new Thread(nubp);
 
-        newTH.start();
+            newTH.start();
+        }
+
 
     }
 }
